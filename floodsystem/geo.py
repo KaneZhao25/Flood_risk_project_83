@@ -15,3 +15,10 @@ def stations_by_distance(stations, p):
         stations_and_distance.append((station.name, haversine(p, station.coord)))
     return sorted_by_key(stations_and_distance, 1)
         
+def stations_within_radius(stations, centre, r):
+    stations_in_radius = []
+    for station in stations:
+        if haversine(centre, station.coord) < r:
+            stations_in_radius.append(station.name,)
+    stations_in_radius.sort()
+    return stations_in_radius
