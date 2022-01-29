@@ -12,7 +12,7 @@ from haversine import haversine
 def stations_by_distance(stations, p):
     stations_and_distance = []
     for station in stations:
-        stations_and_distance.append((station.name, haversine(p, station.coord)))
+        stations_and_distance.append((station, haversine(p, station.coord)))
     return sorted_by_key(stations_and_distance, 1)
         
 def stations_within_radius(stations, centre, r):
