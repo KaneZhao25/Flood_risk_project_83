@@ -13,9 +13,17 @@ def run():
     stations = build_station_list()
 
     #run inconsistency check
-    print(inconsistent_typical_range_stations(stations))
+    inconsistent_stations = inconsistent_typical_range_stations(stations)
     
+    #Function to sort the list of inconsistent stations
+    def inconsistent_stations_details(stations):
+        inconsistent_stations_details = []
+        for station in stations:
+            inconsistent_stations_details.append(station.name)
+        inconsistent_stations_details.sort()
+        return inconsistent_stations_details
 
+    print(inconsistent_stations_details(inconsistent_stations))
 
 if __name__ == "__main__":
     print("*** Task 1F: CUED Part IA Flood Warning System ***")
