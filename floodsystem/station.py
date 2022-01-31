@@ -40,15 +40,25 @@ class MonitoringStation:
         return d
 
     def typical_range_consistent(self):
+        """This method looks at the typical range value for each monitoring station and if
+        it is None (i.e no data) or the low range is greater than the high range we return
+        a boolean value to mark/demonstrate that it contains inconsistent data. Therefore
+        we do not want to include it in our data."""
+        #Test first for no data available
         if self.typical_range == None:
             return False
+        #Test if first tuple value is larger than the second tuple value
         elif self.typical_range[0] > self.typical_range[1]:
             return False
+        #If both these tests are passed we can mark the monitoring station as containing consistent data
         else:
             return True
 
 
 def inconsistent_typical_range_stations(stations):
+    """This function calls the typical range data method and if the monitoring station is marked
+    to be inconsistent it is appended to a list of stations (MonitoringStation) which have
+    inconsistent range data. This list is returned without being sorted"""
     inconsistent_stations = []
     for station in stations:
         if station.typical_range_consistent() == False:

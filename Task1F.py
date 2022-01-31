@@ -17,12 +17,18 @@ def run():
     
     #Function to sort the list of inconsistent stations
     def inconsistent_stations_details(stations):
+        """This function presents the station details in the required form i.e station name only
+        The original function from the .geo file returns instances of MonitoringStation but we
+        only want the name displayed (for readability reasons)"""
         inconsistent_stations_details = []
+        #The function already filters out good station data so we only need to change it's format
         for station in stations:
             inconsistent_stations_details.append(station.name)
+        #The deliverables ask for a alphabetically sorted list so we sort it before returning it
         inconsistent_stations_details.sort()
         return inconsistent_stations_details
 
+    #Calling the function will not print the list so encase the function call in a print
     print(inconsistent_stations_details(inconsistent_stations))
 
 if __name__ == "__main__":
