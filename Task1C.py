@@ -24,6 +24,16 @@ def run():
 
     print(stations_in_radius_details(stations_in_radius))
 
+    #function to print the station details in a parsable form
+    def stations_in_radius_details(stations):
+        stations_in_radius_details = []
+        for station in stations:
+            stations_in_radius_details.append(station.name)
+        stations_in_radius_details.sort()
+        return stations_in_radius_details
+
+    print(stations_in_radius_details(stations_in_radius))
+
 if __name__ == "__main__":
     print("*** Task 1C: CUED Part IA Flood Warning System ***")
     run()
