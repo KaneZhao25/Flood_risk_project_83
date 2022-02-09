@@ -6,6 +6,8 @@ geographical data.
 
 """
 
+from operator import itemgetter
+from xml.dom.minidom import Element
 from .utils import sorted_by_key  # noqa
 from haversine import haversine
 
