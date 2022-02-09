@@ -9,7 +9,7 @@ from floodsystem.station import MonitoringStation
 from test_fake_station_list import fake_station_list
 
 def test_river():
-    stations = fake_station_list
+    stations = fake_station_list()
     river_set = []
     for element in rivers_with_station(stations):
         river_set.append(element)
