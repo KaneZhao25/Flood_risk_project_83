@@ -25,6 +25,6 @@ def stations_within_radius(stations, centre, r):
     returns a list of stations (MonitoringStations) in an unsorted list."""
     stations_in_radius = []
     for station in stations:
-        if haversine(centre, station.coord) < r:
+        if haversine(centre, station.coord) <= r:
             stations_in_radius.append(station)
     return stations_in_radius
