@@ -28,3 +28,41 @@ def stations_within_radius(stations, centre, r):
         if haversine(centre, station.coord) <= r:
             stations_in_radius.append(station)
     return stations_in_radius
+
+def rivers_with_station(stations):
+    """This function provides the list of rivers with a monitoring station."""
+    station_rivers = set()
+    for station in stations:
+        station_rivers.add(station.river)
+    return station_rivers
+
+def stations_by_river(stations):
+    """This function gives a dictionary that maps the rivers with the stations."""
+    rivers_dic = {}
+    for rivers in rivers_with_station(stations):
+        rivers_dic[rivers] = []
+    for station in stations:
+        rivers_dic[station.river].append(station.name)
+    return rivers_dic
+        
+def rivers_by_station_number(stations, N):
+    """This function determines the number of stations by rivers and sorts the list by the number of stations."""
+    station_number = []
+    river_dic = stations_by_river(stations)
+    for river_number in river_dic:
+        k = (river_number, len(stations_by_river(stations)[river_number]))
+        station_number.append(k)
+    sorted_station_number_list = sorted_by_key(station_number, 1, reverse=True)
+    #print(sorted_station_number_list)
+    counter = N
+    while sorted_station_number_list[counter - 1][1] == sorted_station_number_list[counter][1]:
+         counter += 1
+         #print(counter)
+    return sorted_station_number_list[:counter]
+
+
+
+
+
+    
+
