@@ -11,7 +11,7 @@ def fake_station_list():
 
     s_id1 = "test-s-id"
     m_id1 = "test-m-id"
-    label1 = "station 1"
+    label1 = "Station 1"
     coord1 = (-2.0, 4.0)
     trange1 = (-2.3, 3.4445)
     river1 = "River A"
@@ -20,7 +20,7 @@ def fake_station_list():
 
     s_id2 = "test-s-id"
     m_id2 = "test-m-id"
-    label2 = "station 2"
+    label2 = "Station 2"
     coord2 = (-2.0, 4.0)
     trange2 = (-2.3, 3.4445)
     river2 = "River B"
@@ -29,7 +29,7 @@ def fake_station_list():
 
     s_id3 = "test-s-id"
     m_id3 = "test-m-id"
-    label3 = "station 3"
+    label3 = "Station 3"
     coord3 = (-2.0, 4.0)
     trange3 = (-2.3, 3.4445)
     river3 = "River B"
@@ -38,7 +38,7 @@ def fake_station_list():
 
     s_id4 = "test-s-id"
     m_id4 = "test-m-id"
-    label4 = "station 4"
+    label4 = "Station 4"
     coord4 = (-2.0, 4.0)
     trange4 = (-2.3, 3.4445)
     river4 = "River C"
@@ -47,7 +47,7 @@ def fake_station_list():
 
     s_id5 = "test-s-id"
     m_id5 = "test-m-id"
-    label5 = "station 5"
+    label5 = "Station 5"
     coord5 = (-2.0, 4.0)
     trange5 = (-2.3, 3.4445)
     river5 = "River C"
@@ -56,7 +56,7 @@ def fake_station_list():
 
     s_id6 = "test-s-id"
     m_id6 = "test-m-id"
-    label6 = "station 6"
+    label6 = "Station 6"
     coord6 = (-2.0, 4.0)
     trange6 = (-2.3, 3.4445)
     river6 = "River D"
@@ -65,7 +65,7 @@ def fake_station_list():
 
     s_id7 = "test-s-id"
     m_id7 = "test-m-id"
-    label7 = "station 7"
+    label7 = "Station 7"
     coord7 = (-2.0, 4.0)
     trange7 = (-2.3, 3.4445)
     river7 = "River D"
@@ -74,7 +74,7 @@ def fake_station_list():
 
     s_id8 = "test-s-id"
     m_id8 = "test-m-id"
-    label8 = "station 8"
+    label8 = "Station 8"
     coord8 = (-2.0, 4.0)
     trange8 = (-2.3, 3.4445)
     river8 = "River D"

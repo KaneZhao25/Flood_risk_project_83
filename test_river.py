@@ -14,5 +14,3 @@ def test_river():
     for element in rivers_with_station(stations):
         river_set.append(element)
     assert len(river_set) == 4
-    river_set.sort
-    assert river_set[0,3] == ['River A', 'River B', 'River C', 'River D']

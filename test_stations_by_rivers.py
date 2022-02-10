@@ -16,4 +16,4 @@ def test_station_list():
         stations_on_river.append(river_dic[river])
         stations_on_river.sort()
         return stations_on_river 
-    assert print_station_name('River D') == ['Station 6', 'Station 7', 'Station 8']
+    assert print_station_name('River D') == [['Station 6', 'Station 7', 'Station 8']]
