@@ -28,7 +28,17 @@ def build_unit_test_stations():
                                 typical_range=None,
                                 river='test_river_3',
                                 town='test_town_3')
-
-    stations = [station1, station2, station3]
+    station4 = MonitoringStation(station_id='test_station_4',
+                                measure_id='test_measure_id_4',
+                                label='Test Station 4',
+                                coord=(1., 2.),
+                                typical_range=(1., 2.),
+                                river='test_river_4',
+                                town='test_town_4')
+    station1.latest_level = 1.6
+    station2.latest_level = 3.0
+    station3.latest_level = None
+    station4.latest_level = 1.95
+    stations = [station1, station2, station3, station4]
     return stations
 
