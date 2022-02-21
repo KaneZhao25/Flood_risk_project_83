@@ -10,7 +10,7 @@ def run():
     """Requirements for Task 1B"""
 
     # Build list of stations
-    stations = build_station_list()
+    stations = build_station_list(False)
 
     #run inconsistency check
     inconsistent_stations = inconsistent_typical_range_stations(stations)

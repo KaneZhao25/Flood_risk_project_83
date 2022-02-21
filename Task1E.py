@@ -10,7 +10,7 @@ def run():
     """Requirements for Task 1E"""
 
     #Build list of stations
-    stations = build_station_list()
+    stations = build_station_list(False)
 
     #Create list of stations with the function with given counter number
     N = 9

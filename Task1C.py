@@ -9,7 +9,7 @@ def run():
     """Requirements for Task 1B"""
 
     # Build list of stations
-    stations = build_station_list()
+    stations = build_station_list(False)
 
     #Find stations within the radius
     stations_in_radius = stations_within_radius(stations, (52.2053, 0.1218), 10)

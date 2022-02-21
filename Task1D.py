@@ -9,7 +9,7 @@ def run():
     """Requirements for Task 1D"""
 
     #Build list of stations
-    stations = build_station_list()
+    stations = build_station_list(False)
 
     #Build lists of rivers with stations
     river_with_station = []
