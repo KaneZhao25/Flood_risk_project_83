@@ -38,7 +38,7 @@ def build_unit_test_stations():
     station1.latest_level = 1.6
     station2.latest_level = 3.0
     station3.latest_level = None
-    station4.latest_level = 1.95
+    station4.latest_level = 2.0
     stations = [station1, station2, station3, station4]
     return stations
 

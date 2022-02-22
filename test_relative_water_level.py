@@ -23,3 +23,4 @@ def test_unit_stations_relative():
     unit_stations_over_threshold = stations_level_over_threshold(unit_stations)
     assert len(unit_stations_over_threshold) == 1
     assert unit_stations_over_threshold[0][0].name == 'Test Station 4'
+    assert unit_stations_over_threshold[0][0].relative_water_level() == 1.0
