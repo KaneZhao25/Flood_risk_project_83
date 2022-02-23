@@ -19,6 +19,7 @@ def run():
     #Find the 5 stations with highest relative water level
     
     def plot_highest_risk(stations, N, dt):
+        """This function retrieves the N most at risk stations and then plots the relative water level from the last 10 days"""
         stations_to_plot = stations_highest_rel_level(stations, N)
         for station in stations_to_plot:
             dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
@@ -26,14 +27,6 @@ def run():
         return None
     
     plot_highest_risk(stations, 5, 10)
-    # Alternative find station 'Cam' using the Python 'next' function
-    # (https://docs.python.org/3/library/functions.html#next). Raises
-    # an exception if station is not found.
-    # try:
-    #     station_cam = next(s for s in stations if s.name == station_name)
-    # except StopIteration:
-    #     print("Station {} could not be found".format(station_name))
-    #     return
 
 
 
