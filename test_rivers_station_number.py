@@ -12,4 +12,4 @@ def test_river():
     stations = fake_station_list()
     river_test_list = rivers_by_station_number(stations, 2)
     assert len(river_test_list) == 3
-    assert river_test_list == ([('River D', 3), ('River C', 2), ('River B', 2)] or [('River D', 3), ('River B', 2), ('River C', 2)])
+    assert (river_test_list == [('River D', 3), ('River C', 2), ('River B', 2)] or river_test_list == [('River D', 3), ('River B', 2), ('River C', 2)])
