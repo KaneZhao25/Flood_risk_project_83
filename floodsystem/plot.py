@@ -7,7 +7,10 @@ plotting data.
 """
 
 from matplotlib import pyplot as plt
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
+from floodsystem.analysis import polyfit
+import matplotlib
+import numpy as np
 
 def plot_water_level(station, dates, levels):
     """This function plots relative water level for the last few days at a given station and also plots the typical
@@ -24,3 +27,14 @@ def plot_water_level(station, dates, levels):
     plt.tight_layout()
 
     plt.show()
+
+def plot_water_level_with_fit(station, dates, levels, p):
+    x = matplotlib.dates.date2num(dates)
+    x1 = np.linspace(x[0], x[-1], 1000)
+    poly, d0 = polyfit(dates, levels, p)
+    
+    plt.plot(x1, poly(x1))
+    plt.xlabel("date")
+    plt.ylabel("water level")
+    plt.legend
+    plt.show
