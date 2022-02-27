@@ -17,11 +17,17 @@ def polyfit(dates, levels, p):
 def floodrisk(station, dates, levels):
     risk = 0
     #determine risk with relative water level
-    if station.relative_water_level() > 1.5:
+    if station.typical_range_consistent() == False:
+            return None
+    elif station.latest_level == None:
+            return None
+    else:
+        relative_level = (station.latest_level - station.typical_range[0])/(station.typical_range[1]-station.typical_range[0])
+    if relative_level > 1.5:
         risk += 3
-    elif station.relative_water_level() > 1:
+    elif relative_level > 1:
         risk += 2
-    elif station.relative_water_level() > 0.5:
+    elif relative_level > 0.5:
         risk += 1
     else:
         risk += 0

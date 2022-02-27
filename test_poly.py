@@ -13,6 +13,7 @@ def test_poly():
     p_coeff = np.polyfit(x, y, 2)
     poly = np.poly1d(p_coeff)
     assert int(p_coeff[0]) == 2
-    return poly
+    y = poly(10)
+    return poly, p_coeff, y
 
 print(test_poly())

@@ -5,6 +5,7 @@ from unicodedata import name
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.analysis import floodrisk
 from floodsystem.datafetcher import fetch_measure_levels
+from floodsystem.station import MonitoringStation
 import datetime
 
 def run():
@@ -29,5 +30,5 @@ def run():
 
 
 if __name__ == "__main__":
-    print("*** Task 2F: CUED Part IA Flood Warning System ***")
+    print("*** Task 2G: CUED Part IA Flood Warning System ***")
     run()
