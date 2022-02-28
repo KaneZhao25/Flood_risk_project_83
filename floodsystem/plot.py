@@ -30,18 +30,22 @@ def plot_water_level(station, dates, levels):
     plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
-    x = matplotlib.dates.date2num(dates)
-    x1 = np.linspace(x[0], x[-1], 1000)
-    x_date = matplotlib.dates.num2date(x1)
     poly, d0 = polyfit(dates, levels, p)
-    high = station.typical_range[0]
-    low = station.typical_range[1]
+    if poly != False:
+        x = matplotlib.dates.date2num(dates)
+        x1 = np.linspace(x[0], x[-1], 1000)
+        x_date = matplotlib.dates.num2date(x1)
+        high = station.typical_range[0]
+        low = station.typical_range[1]
     
-    plt.plot(x_date, poly(x1-d0))
-    #plt.plot(x, high, label = 'high range')
-    #plt.plot(x, low, label='low range')
-    plt.xlabel("date")
-    plt.ylabel("water level")
-    plt.title(station.name)
-    plt.legend
-    plt.show
+        plt.plot(x_date, poly(x1-d0))
+        plt.axhline(y = high, label = 'high range', color = 'g')
+        plt.axhline(y = low, label='low range', color = 'r')
+        plt.xlabel("date")
+        plt.ylabel("water level")
+        plt.title(station.name)
+        plt.legend
+
+        plt.tight_layout()
+
+        plt.show()
