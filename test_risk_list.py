@@ -1,14 +1,13 @@
 # Copyright (C) 2022 Tianyu Zhao
 #
 # SPDX-License-Identifier: MIT
+"""Unit test for the risk module"""
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.analysis import floodrisk
 from floodsystem.datafetcher import fetch_measure_levels
-from floodsystem.station import MonitoringStation
 import datetime
-import matplotlib.dates
 
-def run():
+def test_poly():
     stations = build_station_list()
     update_water_levels(stations)
     low = []
@@ -29,19 +28,6 @@ def run():
             moderate.append(station.town)
         elif risk == 'low':
             low.append(station.town)
-        if counter == 2000:
+        if counter == 200:
             break
-    print('severe:')
-    print(severe)
-    print('high:')
-    print(high)
-    print('moderate:')
-    print(moderate)
-    print('low:')
-    print(low)
-    print(counter)
-
-
-if __name__ == "__main__":
-    print("*** Task 2G: CUED Part IA Flood Warning System ***")
-    run()
+    assert counter == 200

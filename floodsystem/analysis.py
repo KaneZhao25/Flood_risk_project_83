@@ -26,9 +26,9 @@ def floodrisk(station, dates, levels):
         relative_level = relative_level = (station.latest_level - station.typical_range[0])/(station.typical_range[1]-station.typical_range[0])
 
     if relative_level > 1.5:
-        risk += 3
+        risk += 5
     elif relative_level > 1:
-        risk += 2
+        risk += 3
     elif relative_level > 0.5:
         risk += 1
     else:
