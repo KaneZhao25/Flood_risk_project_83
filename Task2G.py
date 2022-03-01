@@ -29,7 +29,7 @@ def run():
             moderate.append(station.town)
         elif risk == 'low':
             low.append(station.town)
-        if counter == 2000:
+        if counter == 200:
             break
     print('severe:')
     print(severe)
