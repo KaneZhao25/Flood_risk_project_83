@@ -7,26 +7,39 @@ from floodsystem.analysis import floodrisk
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.station import MonitoringStation
 import datetime
+import matplotlib.dates
 
 def run():
     stations = build_station_list()
-    update_water_levels
-    low = set()
-    moderate = set()
-    high = set()
-    severe = set()
+    update_water_levels(stations)
+    low = []
+    moderate = []
+    high = []
+    severe = []
+    counter = 0
     for station in stations:
+        counter += 1
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=2))
         risk = floodrisk(station, dates, levels)
+        print(risk)
         if risk == 'severe':
-            severe.add(station.town)
+            severe.append(station.town)
         elif risk == 'high':
-            high.add(station.town)
+            high.append(station.town)
         elif risk == 'moderate':
-            moderate.add(station.town)
+            moderate.append(station.town)
         elif risk == 'low':
-            low.add(station.town)
+            low.append(station.town)
+        if counter > 1000:
+            break
+    print('severe:')
     print(severe)
+    print('high:')
+    print(high)
+    print('moderate:')
+    print(moderate)
+    print('low:')
+    print(low)
 
 
 if __name__ == "__main__":
