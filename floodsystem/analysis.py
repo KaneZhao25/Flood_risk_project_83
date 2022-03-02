@@ -43,10 +43,15 @@ def floodrisk(station, dates, levels):
         x1 = np.linspace(x[0], x[-1], 100)
         if len(x - x[0]) != len(levels):
             pass
+        elif len(x - x[0]) != len(levels):
+            pass
         else:
-            p_coeff = np.polyfit(x - x[0], levels, 4)
-            poly = np.poly1d(p_coeff)
-            gradient = (poly(x1[-1] - x[0]) - poly(x1[0] - x[0]))
+            try: 
+                p_coeff = np.polyfit(x - x[0], levels, 4)
+                poly = np.poly1d(p_coeff)
+                gradient = (poly(x1[-1] - x[0]) - poly(x1[0] - x[0]))
+            except TypeError:
+                pass
 
     if gradient > 1:
         risk += 3
